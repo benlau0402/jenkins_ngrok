@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/benlau0402/jenkins_ngrok.git'
+                git branch: 'main', url: 'https://github.com/benlau0402/jenkins_ngrok.git'
             }
         }
         stage('Build') {
