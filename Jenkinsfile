@@ -13,12 +13,14 @@ pipeline {
             steps { sh './gradlew test'} 
         }
         stage('Deploy') {
-            steps { 
-                powershell 'java -jar build/libs/hello-world-java-V1.jar'
-            }           
-        }    
-}
-
+            steps {
+                sh '''
+                echo "Running JAR on Unix..."
+                java -jar build/libs/hello-world-java-V1.jar
+                '''
+            }
+        }
+    }
 post {
         always {
             echo 'Cleaning up workspace'
